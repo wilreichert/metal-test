@@ -1,0 +1,34 @@
+{
+  "name": "dev",
+  "description": "Openstack ktc dev environment",
+  "cookbook_versions": {},
+  "json_class": "Chef::Environment",
+  "chef_type": "environment",
+  "default_attributes": {
+    "ha_disabled": false
+  },
+  "override_attributes": {
+    "mysql": {
+      "allow_remote_root": true,
+      "root_network_acl": "%"
+    },
+    "openstack": {
+      "release": "havana",
+      "developer_mode": true,
+      "identity_service_chef_role": "ktc-controller",
+      "identity": {
+        "admin_tenant_name": "admin",
+        "admin_user": "admin"
+      },
+      "compute": {
+        "identity_service_chef_role": "ktc-controller"
+      },
+      "network": {
+        "enabled_networks":"private-net-01",
+        "ng_l3":{
+          "private_network": "private-net-01"
+        }
+      }
+    }
+  }
+}

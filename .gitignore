@@ -1,0 +1,6 @@
+# local chef transient dirs
+clients
+cookbooks
+machines
+nodes
+.chef/cache
