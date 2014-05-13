@@ -4,3 +4,7 @@ cookbooks
 machines
 nodes
 .chef/cache
+
+# lock files
+Berksfile.lock
+Gemfile.lock
