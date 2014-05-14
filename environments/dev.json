@@ -5,9 +5,20 @@
   "json_class": "Chef::Environment",
   "chef_type": "environment",
   "default_attributes": {
-    "ha_disabled": false
+    "etcd": {
+      "servers": [
+        "localhost"
+      ]
+    },
+    "ha_disabled": true
   },
   "override_attributes": {
+    "interface_mapping": {
+      "management": "eth0",
+      "disk": "eth0",
+      "private": "eth0",
+      "public": "eth0"
+    },
     "mysql": {
       "allow_remote_root": true,
       "root_network_acl": "%"
